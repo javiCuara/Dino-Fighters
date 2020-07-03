@@ -1,2 +1,2 @@
 # Dino-Fighters
-Dino hoard survival game mad in unity
+Dino hoard survival game made in unity
