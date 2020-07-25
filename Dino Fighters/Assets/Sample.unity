@@ -274,6 +274,20 @@ MonoBehaviour:
   sprint_speed: 15
   move_speed: 5
   crouch_speed: 2
+--- !u!114 &356208602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 356208597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4de35ee7209e104d8f9b6f20fb85d16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fire_rate: 15
+  damage: 20
 --- !u!1 &654237474
 GameObject:
   m_ObjectHideFlags: 0
@@ -626,6 +640,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1758258622168412951, guid: 336172ae2b1a764498fb69beda5aa095,
+        type: 3}
+      propertyPath: m_TagString
+      value: Axe
       objectReference: {fileID: 0}
     - target: {fileID: 1758258622997036988, guid: 336172ae2b1a764498fb69beda5aa095,
         type: 3}

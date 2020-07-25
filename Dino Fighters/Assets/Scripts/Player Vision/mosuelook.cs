@@ -85,5 +85,7 @@ public class mosuelook : MonoBehaviour
 
         lookRoot.localRotation = Quaternion.Euler(look_angles.x, 0f, 0f);
         playerBody.localRotation = Quaternion.Euler(0f,look_angles.y,0f ); 
+
+        // playerBody.
     }  
 }
