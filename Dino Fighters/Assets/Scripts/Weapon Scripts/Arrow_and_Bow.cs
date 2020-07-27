@@ -8,7 +8,7 @@ public class Arrow_and_Bow : MonoBehaviour
 
     private Rigidbody myBody;
     public float speed = 30f;
-    public float deactivate_timer = 1f;
+    public float deactivate_timer = 3f;
     public float damage = 15;
 
 
