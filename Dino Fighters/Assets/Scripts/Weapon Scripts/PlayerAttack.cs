@@ -15,7 +15,13 @@ public class PlayerAttack : MonoBehaviour
     private bool is_aiming;
 
     private Camera mainCamera;
-    private GameObject chrosshair;
+    private GameObject chrosshair; 
+
+    [SerializeField]
+    private GameObject arrow_prefab, spear_prefab;
+
+    [SerializeField]
+    private Transform arrow_bow_startPos;
 
     void Awake() {
         
@@ -75,12 +81,12 @@ public class PlayerAttack : MonoBehaviour
                         if(weapon_manager.GetCurrentSelectedWeapon().bullet_type
                             == WeaponBulletType.ARROW)
                         {
-                            // Do something
+                            ThrowArrowOrSpear(true);
                         }
                         else if(weapon_manager.GetCurrentSelectedWeapon().bullet_type
                             == WeaponBulletType.SPEAR)
                         {
-                            // Do something
+                            ThrowArrowOrSpear(false);
                         }
                             
                     }
@@ -112,23 +118,40 @@ public class PlayerAttack : MonoBehaviour
 
         if(weapon_manager.GetCurrentSelectedWeapon().weapon_aim == WeaponAim.SELF_AIM)
         {
+            //Debug.Log("Aming: ");
             if(Input.GetMouseButtonDown(1))
             {
-                weapon_manager.GetCurrentSelectedWeapon().Aime(true);
+               // Debug.Log("Mouse down");
                 is_aiming =true;
+                weapon_manager.GetCurrentSelectedWeapon().Aime(true);
             }
 
             if(Input.GetMouseButtonUp(1))
             {
-                weapon_manager.GetCurrentSelectedWeapon().Aime(false);
+                // Debug.Log("Mouse up");
                 is_aiming =false;
+                weapon_manager.GetCurrentSelectedWeapon().Aime(false);
             }
         }
 
     }
 
 
-
+    void ThrowArrowOrSpear(bool throwArrow)
+    {
+        if(throwArrow)
+        {
+            GameObject arrow = Instantiate(arrow_prefab);
+            arrow.transform.position = arrow_bow_startPos.position;
+            arrow.GetComponent<Arrow_and_Bow>().Launch(mainCamera);
+        }
+        else
+        {
+            GameObject spear = Instantiate(spear_prefab);
+            spear.transform.position = arrow_bow_startPos.position;
+            spear.GetComponent<Arrow_and_Bow>().Launch(mainCamera);
+        }
+    }
 
 
 
