@@ -9,6 +9,9 @@ TagManager:
   - Look Root
   - FP Camera
   - Arrow
+  - Boar
+  - Cannibal
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -20,8 +23,8 @@ TagManager:
   - 
   - Post Processing
   - First Person
-  - 
-  - 
+  - Enemy
+  - Player
   - 
   - 
   - 

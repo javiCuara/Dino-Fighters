@@ -14,9 +14,9 @@ public class Arrow_and_Bow : MonoBehaviour
 
 
 
-    void Awake() 
+    void Awake()
     {
-        myBody = GetComponent<Rigidbody>();    
+        myBody = GetComponent<Rigidbody>();
     }
 
     // Start is called before the first frame update
@@ -33,13 +33,13 @@ public class Arrow_and_Bow : MonoBehaviour
     }
     void DeactivateGameObject()
     {
-        if(gameObject.activeInHierarchy)
+        if (gameObject.activeInHierarchy)
         {
             gameObject.SetActive(false);
         }
     }
-    
-    void OnTriggerEnter(Collider target) 
+
+    void OnTriggerEnter(Collider target)
     {
 
     }

@@ -34,27 +34,27 @@ public class PlayerFootSteps : MonoBehaviour
     }
     void CheckToPlayFootSteps()
     {
-        if(!character_controller.isGrounded)
+        if (!character_controller.isGrounded)
         {
             return;
         }
 
         // Test if we are moving
 
-        if(character_controller.velocity.sqrMagnitude > 0)
+        if (character_controller.velocity.sqrMagnitude > 0)
         {
             accumulated_distance += Time.deltaTime;
-            if(accumulated_distance > step_distance)
+            if (accumulated_distance > step_distance)
             {
-                footstep_sound.volume = Random.Range(volume_min,volume_max);
-                footstep_sound.clip = footstep_clip[Random.Range(0,footstep_clip.Length)];
-                
+                footstep_sound.volume = Random.Range(volume_min, volume_max);
+                footstep_sound.clip = footstep_clip[Random.Range(0, footstep_clip.Length)];
+
                 footstep_sound.Play();
 
                 accumulated_distance = 0f;
             }
         }
-        else 
+        else
         {
             accumulated_distance = 0f;
         }

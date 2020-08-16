@@ -10,7 +10,7 @@ public class SprintAndCrouch : MonoBehaviour
 
     private float stand_height = 1.6f;
     private float crouch_height = 1f;
-    
+
     public float sprint_speed = 10f;
     public float move_speed = 5f;
     public float crouch_speed = 2f;
@@ -24,7 +24,8 @@ public class SprintAndCrouch : MonoBehaviour
     private float walk_step_distance = 0.4f;
     private float sprint_step_distance = 0.25f;
     private float crouch_step_distance = 0.5f;
-    private void Awake() {
+    private void Awake()
+    {
         PlayerMovement = GetComponent<PlayerMovement>();
         lookRoot = transform.GetChild(0);
 
@@ -46,43 +47,45 @@ public class SprintAndCrouch : MonoBehaviour
         Sprint();
         Crouch();
     }
-    void Sprint(){
-        if(Input.GetKeyDown(KeyCode.LeftShift) && !isCrouching)
+    void Sprint()
+    {
+        if (Input.GetKeyDown(KeyCode.LeftShift) && !isCrouching)
         {
             PlayerMovement.speed = sprint_speed;
-            
+
             player_FootSteps.step_distance = sprint_step_distance;
-            player_FootSteps.volume_min =  sprint_volume;
+            player_FootSteps.volume_min = sprint_volume;
             player_FootSteps.volume_max = sprint_volume;
 
         }
-        if(Input.GetKeyUp(KeyCode.LeftShift) && !isCrouching)
+        if (Input.GetKeyUp(KeyCode.LeftShift) && !isCrouching)
         {
             PlayerMovement.speed = move_speed;
 
             player_FootSteps.step_distance = walk_step_distance;
-            player_FootSteps.volume_min =  walk_volume_min;
+            player_FootSteps.volume_min = walk_volume_min;
             player_FootSteps.volume_max = walk_volume_max;
-            
+
         }
     }
 
-    void Crouch(){
-        if(Input.GetKeyDown(KeyCode.C))
+    void Crouch()
+    {
+        if (Input.GetKeyDown(KeyCode.C))
         {
-            if(isCrouching)
+            if (isCrouching)
             {
                 lookRoot.localPosition = new Vector3(0f, stand_height, 0f);
-                PlayerMovement.speed = move_speed; 
+                PlayerMovement.speed = move_speed;
                 isCrouching = false;
             }
             else
             {
                 lookRoot.localPosition = new Vector3(0f, crouch_height, 0f);
                 PlayerMovement.speed = crouch_speed;
-                
+
                 player_FootSteps.step_distance = crouch_step_distance;
-                player_FootSteps.volume_min =  crouch_voulume;
+                player_FootSteps.volume_min = crouch_voulume;
                 player_FootSteps.volume_max = crouch_voulume;
 
                 isCrouching = true;

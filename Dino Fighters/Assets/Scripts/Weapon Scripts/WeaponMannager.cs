@@ -5,10 +5,10 @@ using UnityEngine;
 public class WeaponMannager : MonoBehaviour
 {
     [SerializeField]
-    private WeaponHandler [] weapons;
+    private WeaponHandler[] weapons;
 
     private int current_WeaponIndex;
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,27 +19,27 @@ public class WeaponMannager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             TurnOnSelectedWeapon(0);
         }
-        if(Input.GetKeyDown(KeyCode.Alpha2))
+        if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             TurnOnSelectedWeapon(1);
         }
-        if(Input.GetKeyDown(KeyCode.Alpha3))
+        if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             TurnOnSelectedWeapon(2);
         }
-        if(Input.GetKeyDown(KeyCode.Alpha4))
+        if (Input.GetKeyDown(KeyCode.Alpha4))
         {
             TurnOnSelectedWeapon(3);
         }
-        if(Input.GetKeyDown(KeyCode.Alpha5))
+        if (Input.GetKeyDown(KeyCode.Alpha5))
         {
             TurnOnSelectedWeapon(4);
         }
-        if(Input.GetKeyDown(KeyCode.Alpha6))
+        if (Input.GetKeyDown(KeyCode.Alpha6))
         {
             TurnOnSelectedWeapon(5);
         }
@@ -47,7 +47,7 @@ public class WeaponMannager : MonoBehaviour
 
     void TurnOnSelectedWeapon(int weaponIndex)
     {
-        if(current_WeaponIndex == weaponIndex)
+        if (current_WeaponIndex == weaponIndex)
         {
             return;
         }
@@ -57,7 +57,7 @@ public class WeaponMannager : MonoBehaviour
     }
 
 
-    public  WeaponHandler GetCurrentSelectedWeapon()
+    public WeaponHandler GetCurrentSelectedWeapon()
     {
         return weapons[current_WeaponIndex];
     }

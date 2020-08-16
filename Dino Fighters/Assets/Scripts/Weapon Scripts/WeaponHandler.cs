@@ -33,7 +33,7 @@ public class WeaponHandler : MonoBehaviour
     [SerializeField]
     private GameObject muzzelFlash;
 
-    [SerializeField]    
+    [SerializeField]
     private AudioSource shootSound, reload_sound;
 
     public WeaponFireType fireType;
@@ -41,19 +41,23 @@ public class WeaponHandler : MonoBehaviour
     public GameObject attack_point;
 
 
-    void Awake() {
-        ani = GetComponent<Animator>();    
+    void Awake()
+    {
+        ani = GetComponent<Animator>();
     }
 
-    public void ShoootAnimation(){
+    public void ShoootAnimation()
+    {
         ani.SetTrigger(AnimationTags.SHOOT_TRIGGER);
     }
 
-    public void Aime(bool canAim){
+    public void Aime(bool canAim)
+    {
         ani.SetBool(AnimationTags.AIM_PARAMETER, canAim);
     }
 
-    void Turn_on_MuzzelFlash(){
+    void Turn_on_MuzzelFlash()
+    {
         muzzelFlash.SetActive(false);
     }
 
@@ -63,18 +67,20 @@ public class WeaponHandler : MonoBehaviour
 
     }
 
-    void  Play_ReloadSound()
+    void Play_ReloadSound()
     {
         reload_sound.Play();
     }
-    void  Turn_on_AttackPoin()
+    void Turn_on_AttackPoint()
     {
+        // Debug.Log("Attack Point Activated");
         attack_point.SetActive(true);
     }
-    void  Turn_off_AttackPoin()
+    void Turn_off_AttackPoint()
     {
-        if(attack_point.activeInHierarchy)
+        if (attack_point.activeInHierarchy)
         {
+            // Debug.Log("Attack Point Deactivated");
             attack_point.SetActive(false);
         }
     }

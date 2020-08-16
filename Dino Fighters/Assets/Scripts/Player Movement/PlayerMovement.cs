@@ -12,7 +12,8 @@ public class PlayerMovement : MonoBehaviour
     public float jump = 10f;
 
     private float v_velocity;
-    void Awake(){
+    void Awake()
+    {
         charater_controller = GetComponent<CharacterController>();
     }
     void Update()
@@ -27,13 +28,15 @@ public class PlayerMovement : MonoBehaviour
         PlayerGravity();
         charater_controller.Move(move_dir);
     }
-    void PlayerGravity(){
+    void PlayerGravity()
+    {
         v_velocity -= gravity * Time.deltaTime;
         PlayerJump();
         move_dir.y = v_velocity * Time.deltaTime;
     }
-    void PlayerJump(){
-        if(charater_controller.isGrounded && Input.GetKeyDown(KeyCode.Space))
+    void PlayerJump()
+    {
+        if (charater_controller.isGrounded && Input.GetKeyDown(KeyCode.Space))
         {
             v_velocity = jump;
         }
